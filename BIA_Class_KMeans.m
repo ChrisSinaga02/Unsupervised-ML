@@ -72,9 +72,9 @@ for i=1:points_n
     clust=[clust;idx];
 end
 
-for rate=1:cluster_n
-    ipo{rate}=find(clust==rate);
-    ncc(rate)=length(ipo{rate});
+for k=1:cluster_n
+    ipo{k}=find(clust==k);
+    ncc(k)=length(ipo{k});
 end
 
 
