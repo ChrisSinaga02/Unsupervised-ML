@@ -1,3 +1,5 @@
+%% Code by: Kristina P. Sinaga (kristina.sinaga@binus.edu)
+
 clear all;close all;clc
 
 % points = xlsread('Online Retail.xlsx');
