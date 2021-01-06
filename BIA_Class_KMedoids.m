@@ -25,26 +25,26 @@ for itr =1:t_max
     
     rng(10);
     rd=randsample(points_n,cluster_n);
-    [val, lab] = min(D(rd,:),[],1);
+    [val, clust] = min(D(rd,:),[],1);
     last = 0;
-    while any(lab ~= last)
-        [~, ind] = min(D*sparse(1:points_n,lab,1,points_n,cluster_n,points_n),[],1);
-        last = lab;
-        [val, lab] = min(D(ind,:),[],1);
+    while any(clust ~= last)
+        [~, ind] = min(D*sparse(1:points_n,clust,1,points_n,cluster_n,points_n),[],1);
+        last = clust;
+        [val, clust] = min(D(ind,:),[],1);
     end    
     en(itr) = sum(val);
     if en(itr)<thres_kd
         thres_kd=en(itr);
-        label=lab;
+        label=clust;
         index=ind;
         it=itr;
     end    
     
 end
 
-for itr=1:cluster_n
-    ipo{itr}=find(lab==itr);
-    ncc(itr)=length(ipo{itr});
+for k=1:cluster_n
+    ipo{k}=find(clust==k);
+    ncc(k)=length(ipo{k});
 end
 
 [nc ip]=sort(ncc,'descend');
