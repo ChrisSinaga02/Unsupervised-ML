@@ -1,4 +1,4 @@
-%% Code by: Kristina P. Sinaga (kristina.sinaga@binus.edu)
+%% Created by: Kristina P. Sinaga (kristinasinaga57@yahoo.co.id)
 %% Vendor Segmentation
 
 clear all;close all;clc
